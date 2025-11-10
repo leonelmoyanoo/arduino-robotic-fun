@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Taller Misión Arduino</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Energetic & Playful (#FF7B00, #FFD700, #00A2FF, #2E2E2E, #F7F7F7) -->
+    <!-- Application Structure Plan: La infografía está diseñada como una narrativa de desplazamiento vertical de una sola página. Comienza con una cabecera de "gancho" (Misión Arduino), seguida de las 4 secciones clave del resumen: 1. El Objetivo (por qué), 2. Las 8 Misiones (el camino), 3. Los Materiales (las herramientas), y 4. La Filosofía (la mentalidad). Esta estructura lineal es intuitiva, cuenta una historia y permite que cada sección se revele con una animación de "scroll", haciendo que la información sea divertida de consumir. -->
+    <!-- Visualization & Content Choices:
+        - Objetivo Principal (Texto): Goal: Informar. Method: Tarjeta HTML/Tailwind destacada. Interaction: Animación de scroll (fadeInUp). Justo: Establece el tono y la meta principal. (NO SVG).
+        - 8 Misiones (Diagrama/Organize): Goal: Organizar. Method: Un grid de 2 columnas (en escritorio) de tarjetas HTML/Tailwind. Cada tarjeta tiene un borde de color acentuado. Interaction: Animación de "hover" (scale/shadow) y animación de scroll (fadeInUp). Justo: Es el núcleo de la infografía, permite al líder ver el currículum de un vistazo de forma atractiva. (NO SVG/Mermaid).
+        - Materiales Clave (Organize): Goal: Informar. Method: Un grid de tarjetas pequeñas con iconos Unicode (emojis) para representar cada material. Interaction: Animación de hover y scroll. Justo: Transforma una lista de texto aburrida en un "inventario" visual y divertido. (NO SVG).
+        - Filosofía del Líder (Texto): Goal: Informar. Method: Tarjeta de cierre destacada, con colores invertidos (oscuro) para dar énfasis. Interaction: Animación de scroll. Justo: Cierra la infografía con el concepto de mentalidad más importante. (NO SVG).
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-neutral-100 font-sans text-neutral-800">
+
+    <header class="text-center p-8 sm:p-12 bg-white shadow-md">
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-[#FF7B00]">
+            Misión Arduino
+        </h1>
+        <p class="text-xl sm:text-2xl text-neutral-600 mt-2 font-light">Resumen del Taller "Creadores del Futuro"</p>
+    </header>
+
+    <main class="container mx-auto max-w-5xl px-4 py-12 space-y-16">
+
+        <section class="scroll-animate">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-t-8 border-[#FF7B00]">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#FF7B00] flex items-center justify-center gap-4">
+                    <span class="text-4xl">🎯</span>
+                    Nuestro Objetivo Principal
+                </h2>
+                <p class="text-center text-xl text-neutral-700 leading-relaxed">
+                    El objetivo no es solo enseñar electrónica, sino usar la robótica como la excusa perfecta para desarrollar la <strong class="font-semibold">lógica</strong> y la <strong class="font-semibold">resolución de problemas</strong>. Seguimos la filosofía de <strong class="text-[#FF7B00]">"Aprender Creando"</strong>, donde cada clase es una misión con un desafío divertido.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-extrabold text-neutral-800 text-center mb-10">
+                Las 8 Misiones del Taller
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#FF7B00] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 1: "La Chispa"</h3>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Idea:</strong> Enseñar al robot a seguir órdenes en un orden específico (Secuencias).</p>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Aplicación:</strong> Programar un LED para que parpadee un S.O.S.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Luces de Navidad, balizas.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#00A2FF] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 2: "La Reacción"</h3>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Idea:</strong> El robot aprende a "escuchar" y tomar decisiones (Si-Entonces).</p>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Aplicación:</strong> Crear un timbre que enciende una luz al presionar un botón.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Joysticks, timbres.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#FFD700] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 3: "Los Matices"</h3>
+                    <p class="mb-2"><strong class="text-[#FFD700]">Idea:</strong> Entender que no todo es "encendido" o "apagado" (Valores Analógicos).</p>
+                    <p class="mb-2"><strong class="text-[#FFD700]">Aplicación:</strong> Usar una perilla para controlar la velocidad o brillo de una luz.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Reguladores de volumen, aceleradores.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#FF7B00] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 4: "El Guardián"</h3>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Idea:</strong> Combinar un "sentido" (luz) con una "acción" (sonido).</p>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Aplicación:</strong> Construir una alarma para una "caja fuerte" que suena si detecta luz.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Luces de calle automáticas, alarmas.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#00A2FF] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 5: "El Radar"</h3>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Idea:</strong> Usar sonido (ultrasonido) para "ver" y medir distancias.</p>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Aplicación:</strong> Crear un sensor de estacionamiento que suena más rápido al acercarse.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Sensores de autos, robots (Roomba).</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#FFD700] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 6: "La Fuerza"</h3>
+                    <p class="mb-2"><strong class="text-[#FFD700]">Idea:</strong> Darle "músculos" al robot para que interactúe con el mundo (Movimiento).</p>
+                    <p class="mb-2"><strong class="text-[#FFD700]">Aplicación:</strong> Programar un motor (servo) para que suba y baje una barrera.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Brazos robóticos, barreras de peaje.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#FF7B00] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 7: "El Plan Maestro"</h3>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Idea:</strong> Dejar de seguir instrucciones y diseñar una solución propia (Resolución de Problemas).</p>
+                    <p class="mb-2"><strong class="text-[#FF7B00]">Aplicación:</strong> Prototipar un "guardián de plantas" que avisa si la tierra está seca.</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: ¡Diseño de cualquier producto!</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 border-l-8 border-[#00A2FF] scroll-animate">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-3">Misión 8: "Demo Day"</h3>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Idea:</strong> Celebrar el esfuerzo y aprender a comunicar una idea (Comunicación).</p>
+                    <p class="mb-2"><strong class="text-[#00A2FF]">Aplicación:</strong> Presentar el proyecto, explicando el problema y cómo superaron los "bugs".</p>
+                    <p class="text-sm text-neutral-500">Mundo Real: Presentaciones de trabajo, equipo.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-extrabold text-neutral-800 text-center mb-10">
+                La Caja de Herramientas
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">🧠</div>
+                    <span class="font-semibold text-neutral-700">El Cerebro</span>
+                    <p class="text-sm text-neutral-500">Arduino UNO</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">📦</div>
+                    <span class="font-semibold text-neutral-700">La Base</span>
+                    <p class="text-sm text-neutral-500">Protoboard</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">🔘</div>
+                    <span class="font-semibold text-neutral-700">Controles</span>
+                    <p class="text-sm text-neutral-500">Botones y Perillas</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">🌡️</div>
+                    <span class="font-semibold text-neutral-700">Sensores</span>
+                    <p class="text-sm text-neutral-500">Luz, Distancia, etc.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">💡</div>
+                    <span class="font-semibold text-neutral-700">Actuadores (Luz)</span>
+                    <p class="text-sm text-neutral-500">LEDs</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">🔊</div>
+                    <span class="font-semibold text-neutral-700">Actuadores (Sonido)</span>
+                    <p class="text-sm text-neutral-500">Buzzer</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">⚙️</div>
+                    <span class="font-semibold text-neutral-700">Actuadores (Mov.)</span>
+                    <p class="text-sm text-neutral-500">Servomotor</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center hover:scale-110 transition-transform duration-300 scroll-animate">
+                    <div class="text-5xl mb-2">💻</div>
+                    <span class="font-semibold text-neutral-700">Software</span>
+                    <p class="text-sm text-neutral-500">Arduino IDE (Gratis)</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="scroll-animate">
+            <div class="bg-[#2E2E2E] text-white p-10 rounded-2xl shadow-xl border-t-8 border-[#00A2FF]">
+                <h2 class="text-3xl font-bold text-center mb-6 text-[#00A2FF] flex items-center justify-center gap-4">
+                    <span class="text-4xl">🧑‍🏫</span>
+                    Filosofía del Líder
+                </h2>
+                <p class="text-center text-xl text-neutral-200 leading-relaxed">
+                    El rol del líder no es "dar la clase", sino ser un <strong class="font-semibold text-white">mentor</strong>. El éxito no se mide si el proyecto funciona, sino si el alumno puede explicar <strong class="text-[#FFD700]">por qué</strong> no funciona y qué intentó.
+                </p>
+                <p class="text-center text-2xl text-white mt-6 font-bold bg-[#FF7B00] p-3 rounded-lg">
+                    ¡Se celebra el "BUG" (error) como una oportunidad de aprender!
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 bg-white mt-12 shadow-inner">
+        <p class="text-neutral-500 text-sm">Infografía generada para el taller "Misión Arduino" de Robotic Fun.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.scroll-animate').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+
+</body>
+</html>
